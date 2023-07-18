@@ -74,7 +74,7 @@ function App() {
     {
       console.log("Quantity: "+ localStorage.getItem("quantity"));
       try {
-        const fetchData  = await axios.post('http://localhost:8080/cors-post', { json },
+        const fetchData  = await axios.post('http://payment.julibs.com/cors-post', { json },
         {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -97,7 +97,7 @@ function App() {
         console.log("email");
         if(JSON.stringify(successFirstAPI.success)) {
           console.log("email send one time only");
-          const fetchEmail  = await axios.post('http://localhost:8080/cors-post-email', { mergedObj },
+          const fetchEmail  = await axios.post('http://payment.julibs.com/cors-post-email', { mergedObj },
           {
             headers: {
               'Content-Type': 'application/json'
@@ -119,7 +119,7 @@ const handleClick = () => {
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
   
-  fetch("http://localhost:4242/create-payment-intent", {
+  fetch("http://payment.julibs.com/create-payment-intent", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ items: totalAmount+ "00" }),
