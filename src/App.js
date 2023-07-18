@@ -120,7 +120,6 @@ const handleClick = () => {
   localStorage.setItem("quantity", quantity);
   
   fetch("https://payment.julibs.com/create-payment-intent", {
-    mode: 'no-cors',
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ items: totalAmount+ "00" }),
