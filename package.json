@@ -2,7 +2,6 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://cors-2etccdk2u-faizanshahid232.vercel.app/",
   "dependencies": {
     "@stripe/react-stripe-js": "^2.1.1",
     "@stripe/stripe-js": "^1.54.1",
