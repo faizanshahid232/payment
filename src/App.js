@@ -119,7 +119,7 @@ const handleClick = () => {
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
   
-  fetch("https://cors-j9szhk8g8-faizanshahid232.vercel.app/create-payment-intent", {
+  fetch("https://cors-j9szhk8g8-faizanshahid232.vercel.app/payment/create", {
     method: "POST",
     headers: { 
       "Content-Type": "application/json",
