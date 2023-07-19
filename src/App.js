@@ -74,7 +74,7 @@ function App() {
     {
       console.log("Quantity: "+ localStorage.getItem("quantity"));
       try {
-        const fetchData  = await axios.post('https://cors-nxxn8ohn7-faizanshahid232.vercel.app/cors-post', { json },
+        const fetchData  = await axios.post('https://cors-ni6e8xtbe-faizanshahid232.vercel.app/cors-post', { json },
         {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -97,7 +97,7 @@ function App() {
         console.log("email");
         if(JSON.stringify(successFirstAPI.success)) {
           console.log("email send one time only");
-          const fetchEmail  = await axios.post('https://cors-nxxn8ohn7-faizanshahid232.vercel.app/cors-post-email', { mergedObj },
+          const fetchEmail  = await axios.post('https://cors-ni6e8xtbe-faizanshahid232.vercel.app/cors-post-email', { mergedObj },
           {
             headers: {
               'Content-Type': 'application/json'
@@ -119,7 +119,7 @@ const handleClick = () => {
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
   
-  fetch("https://cors-nxxn8ohn7-faizanshahid232.vercel.app/payment/create", {
+  fetch("https://cors-ni6e8xtbe-faizanshahid232.vercel.app/payment/create", {
     method: "POST",
     headers: { 
       "Content-Type": "application/json",
