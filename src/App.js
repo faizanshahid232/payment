@@ -121,7 +121,9 @@ const handleClick = () => {
   
   fetch("https://cors-chi.vercel.app/create-payment-intent", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { 
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*" },
     body: JSON.stringify({ items: totalAmount+ "00" }),
   })
     .then((res) => res.json())
