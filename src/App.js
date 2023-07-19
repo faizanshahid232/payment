@@ -119,11 +119,10 @@ const handleClick = () => {
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
   
-  fetch("https://cors-chi.vercel.app/api/payment/create", {
+  fetch("https://coreservices.vercel.app/create-payment-intent", {
     method: "POST",
     headers: { 
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*" },
+      "Content-Type": "application/json"},
     body: JSON.stringify({ items: totalAmount+ "00" }),
   })
     .then((res) => res.json())
