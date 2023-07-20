@@ -142,7 +142,7 @@ const handleClick = () => {
     body: JSON.stringify({ items: 1200 }),
   })
     .then((res) => res.json())
-    .then((data) => setClientSecret(data.clientSecret));
+    .then((data) => setClientSecret(data));
     //paymenttest();
     setproceedPaymentPage(false);
 };
