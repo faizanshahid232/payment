@@ -140,8 +140,8 @@ const handleClick = () => {
           'content-type': 'application/json'
       }
     });
-	  console.log(response.data);
-    setClientSecret(response.clientSecret)
+	  console.log(response.data.clientSecret);
+    //setClientSecret(response.clientSecret)
     setproceedPaymentPage(false);
 };
 
