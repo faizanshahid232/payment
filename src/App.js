@@ -50,7 +50,15 @@ function App() {
       "redirect_status",
     ));
   }, []);
+
+  useEffect(() => {
+    tets();
+  },[]);
   
+  const tets = async() => {
+    const res = await axios.get(`https://coreservices.vercel.app/cors`);
+    console.log(res);
+  }
   const appearance = {
     theme: 'stripe',
   };
