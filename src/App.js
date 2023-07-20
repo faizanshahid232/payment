@@ -127,15 +127,21 @@ const handleClick = () => {
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
   
-  fetch("https://coreservices.vercel.app/create-payment-intent", {
+  /*fetch("https://coreservices.vercel.app/create-payment-intent", {
     method: "POST",
     headers: { 
       "Content-Type": "application/json"},
     body: JSON.stringify({ items: totalAmount+ "00" }),
   })
     .then((res) => res.json())
-    .then((data) => setClientSecret(data.clientSecret));
-  setproceedPaymentPage(false);
+    .then((data) => setClientSecret(data.clientSecret));*/
+    const response = axios.post('https://coreservices.vercel.app/create-payment-intent', { items: totalAmount+ "00" }, {
+      headers: {
+          'content-type': 'text/json'
+      }
+    });
+	  console.log(response.data);
+    setproceedPaymentPage(false);
 };
 
 const totalAmountCalculate = (quantity) => {
