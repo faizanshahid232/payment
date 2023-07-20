@@ -139,7 +139,7 @@ const handleClick = () => {
     method: "POST",
     headers: { 
       "Content-Type": "application/x-www-form-urlencoded"},
-    body: JSON.stringify({ items: totalAmount+ "00" }),
+    body: JSON.stringify({ items: "1200" }),
   })
     .then((res) => res.json())
     .then((data) => setClientSecret(data.clientSecret));
