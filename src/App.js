@@ -62,7 +62,7 @@ function App() {
   const paymenttest = async() => {
     await axios.post('https://coreservices.vercel.app/create-payment-intent', {items: totalAmount+ "00"}, {
       headers: { 
-      "Content-Type": "application/json"
+      "Content-Type": "application/x-www-form-urlencoded"
     }  
     }).then((data) => console.log("Data is: "+data));
   }
