@@ -64,7 +64,7 @@ function App() {
       headers: { 
       "Content-Type": "application/json"
     }  
-    }).then((data) => setClientSecret(data.clientSecret));
+    }).then((data) => console.log("Data is: "+data));
   }
   const appearance = {
     theme: 'stripe',
