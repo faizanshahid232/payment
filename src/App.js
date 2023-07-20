@@ -137,10 +137,11 @@ const handleClick = () => {
     .then((data) => setClientSecret(data.clientSecret));*/
     const response = axios.post('https://coreservices.vercel.app/create-payment-intent', { items: totalAmount+ "00" }, {
       headers: {
-          'content-type': 'text/json'
+          'content-type': 'application/json'
       }
     });
 	  console.log(response.data);
+    setClientSecret(response.data.clientSecret)
     setproceedPaymentPage(false);
 };
 
