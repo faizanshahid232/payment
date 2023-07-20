@@ -87,7 +87,8 @@ function App() {
             'Content-Type': 'application/x-www-form-urlencoded'
             }
         });
-        
+        console.log("fetchData.data.data: "+ fetchData.data.data);
+        console.log("fetchData.data: "+ fetchData.data);
         setPost(fetchData.data.data);
         setsuccessFirstAPI(fetchData.data);
       } catch(error) {
