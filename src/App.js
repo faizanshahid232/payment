@@ -134,15 +134,16 @@ const handleClick = () => {
   localStorage.setItem("emailAddress", emailAddress);
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
-  
+  const xyz = 1200;
+  console.log("xyz: "+xyz);
   fetch("https://coreservices.vercel.app/create-payment-intent", {
     method: "POST",
     headers: { 
-      "Content-Type": "application/x-www-form-urlencoded"},
-    body: JSON.stringify({ items: 1200 }),
+      "Content-Type": "application/json"},
+    body: JSON.stringify({"items": 1200}),
   })
     .then((res) => res.json())
-    .then((data) => setClientSecret(data));
+    .then((data) => setClientSecret(data.clientSecret));
     //paymenttest();
     setproceedPaymentPage(false);
 };
