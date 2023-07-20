@@ -51,15 +51,6 @@ function App() {
     ));
   }, []);
 
-  useEffect(() => {
-    tets();
-  },[]);
-  
-  const tets = async() => {
-    const res = await axios.get(`https://coreservices.vercel.app/cors`);
-    console.log(res);
-  }
-  
   /*const paymenttest = async() => {
     await axios.post('https://coreservices.vercel.app/create-payment-intent', {items: totalAmount+ "00"}, {
       headers: { 
@@ -90,7 +81,7 @@ function App() {
     {
       console.log("Quantity: "+ localStorage.getItem("quantity"));
       try {
-        const fetchData  = await axios.post('https://cors-chi.vercel.app/api/cors-post', { json },
+        const fetchData  = await axios.post('https://coreservices.vercel.app/cors-post', { json },
         {
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -113,7 +104,7 @@ function App() {
         console.log("email");
         if(JSON.stringify(successFirstAPI.success)) {
           console.log("email send one time only");
-          const fetchEmail  = await axios.post('https://cors-chi.vercel.app/api/cors-post-email', { mergedObj },
+          const fetchEmail  = await axios.post('https://coreservices.vercel.app/cors-post-email', { mergedObj },
           {
             headers: {
               'Content-Type': 'application/json'
@@ -134,13 +125,12 @@ const handleClick = () => {
   localStorage.setItem("emailAddress", emailAddress);
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
-  const xyz = 1200;
-  console.log("xyz: "+xyz);
+
   fetch("https://coreservices.vercel.app/create-payment-intent", {
     method: "POST",
     headers: { 
       "Content-Type": "application/json"},
-    body: JSON.stringify({"items": 1200}),
+    body: JSON.stringify({"items": quantity+ "00"}),
   })
     .then((res) => res.json())
     .then((data) => setClientSecret(data.clientSecret));
