@@ -138,8 +138,8 @@ const handleClick = () => {
   fetch("https://coreservices.vercel.app/create-payment-intent", {
     method: "POST",
     headers: { 
-      "Content-Type": "application/x-www-form-urlencoded"},
-    body: { items: "1200" },
+      "Content-Type": "application/json; charset=UTF-8"},//"application/x-www-form-urlencoded"},
+    body: JSON.stringify({ items: "1200" }),
   })
     .then((res) => res.json())
     .then((data) => setClientSecret(data.clientSecret));
