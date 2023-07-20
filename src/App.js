@@ -141,7 +141,7 @@ const handleClick = () => {
       }
     });
 	  console.log(response.data);
-    setClientSecret(response.data.clientSecret)
+    setClientSecret(response.clientSecret)
     setproceedPaymentPage(false);
 };
 
