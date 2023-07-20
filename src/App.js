@@ -59,13 +59,14 @@ function App() {
     const res = await axios.get(`https://coreservices.vercel.app/cors`);
     console.log(res);
   }
-  const paymenttest = async() => {
+  
+  /*const paymenttest = async() => {
     await axios.post('https://coreservices.vercel.app/create-payment-intent', {items: totalAmount+ "00"}, {
       headers: { 
       "Content-Type": "application/x-www-form-urlencoded"
     }  
     }).then((data) => console.log("Data is: "+data));
-  }
+  }*/
   const appearance = {
     theme: 'stripe',
   };
@@ -134,15 +135,15 @@ const handleClick = () => {
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
   
-  /*fetch("https://coreservices.vercel.app/create-payment-intent", {
+  fetch("https://coreservices.vercel.app/create-payment-intent", {
     method: "POST",
     headers: { 
-      "Content-Type": "application/json"},
+      "Content-Type": "application/x-www-form-urlencoded"},
     body: JSON.stringify({ items: totalAmount+ "00" }),
   })
     .then((res) => res.json())
-    .then((data) => setClientSecret(data.clientSecret));*/
-    paymenttest();
+    .then((data) => setClientSecret(data.clientSecret));
+    //paymenttest();
     setproceedPaymentPage(false);
 };
 
