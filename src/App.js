@@ -84,7 +84,7 @@ function App() {
         const fetchData  = await axios.post('https://coreservices.vercel.app/cors-post', { json },
         {
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
             }
         });
         console.log(fetchData.data.data);
