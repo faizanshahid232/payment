@@ -161,8 +161,7 @@ const totalAmountCalculate = (quantity) => {
         ) : ''}
         {proceedPaymentPage ? (
         <form onSubmit={handleClick}>
-        <div className="block tracking-wide leading-relaxed font-extrabold text-3xl ml-4">Raw Carbon</div>
-        <div className="font-medium text-lg ml-4">Offsetting sea freight</div>
+        <div className="block tracking-wide leading-relaxed font-extrabold text-3xl ml-4">Carbon Offset</div>
         <div className="text-palette-primary font-medium py-4 px-1 text-2xl ml-4">$12 <span className='text-xl text-palette-primary font-medium'>/tons</span></div>
         <div className='w-full ml-4'>
           <div className='flex justify-start space-x-2 w-full'>
@@ -222,6 +221,18 @@ const totalAmountCalculate = (quantity) => {
                 onChange={e => setresAddress(e.target.value)}
                 type="text" />
               </div>
+              <div className="w-full px-3 mt-2 mb-1 md:mb-0">
+              <input
+                  className="mr-2 mt-[0.3rem] h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-neutral-300 before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] after:h-5 after:w-5 after:rounded-full after:border-none after:bg-neutral-100 after:shadow-[0_0px_3px_0_rgb(0_0_0_/_7%),_0_2px_2px_0_rgb(0_0_0_/_4%)] after:transition-[background-color_0.2s,transform_0.2s] after:content-[''] checked:bg-primary checked:after:absolute checked:after:z-[2] checked:after:-mt-[3px] checked:after:ml-[1.0625rem] checked:after:h-5 checked:after:w-5 checked:after:rounded-full checked:after:border-none checked:after:bg-primary checked:after:shadow-[0_3px_1px_-2px_rgba(0,0,0,0.2),_0_2px_2px_0_rgba(0,0,0,0.14),_0_1px_5px_0_rgba(0,0,0,0.12)] checked:after:transition-[background-color_0.2s,transform_0.2s] checked:after:content-[''] hover:cursor-pointer focus:outline-none focus:ring-0 focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[3px_-1px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-5 focus:after:w-5 focus:after:rounded-full focus:after:content-[''] checked:focus:border-primary checked:focus:bg-primary checked:focus:before:ml-[1.0625rem] checked:focus:before:scale-100 checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] dark:bg-neutral-600 dark:after:bg-neutral-400 dark:checked:bg-primary dark:checked:after:bg-primary dark:focus:before:shadow-[3px_-1px_0px_13px_rgba(255,255,255,0.4)] dark:checked:focus:before:shadow-[3px_-1px_0px_13px_#3b71ca]"
+                  type="checkbox"
+                  role="switch"
+                  checked="enable"
+                  id="flexSwitchCheckDefault" readOnly />
+              <label
+                  className="inline-block pl-[0.15rem] hover:cursor-pointer"
+                  htmlFor="flexSwitchCheckDefault"
+              >Email carbon neutral certificate</label>
+              </div>
             </div>
             <div className="md:w-full px-3 py-3">
             <button type='submit' className="mt-2 w-full shadow bg-[#1b1a1a] hover:bg-[#1b1a1a] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
@@ -279,6 +290,21 @@ const totalAmountCalculate = (quantity) => {
             </Swiper>
         </div>
         <div className="w-1/6"></div>
+      </div>
+    </div>
+    <div className="container mx-auto p-8">
+      <div className='flex flex-col md:flex-row'>
+        <div className="w-1/5"></div>
+        <div className="w-4/5">
+          <h3 className='text-center font-extrabold text-3xl mb-4'>Why should I take control of my carbon footprint with The Carbon Collective Company?</h3>
+          <p className='font-medium text-base mb-2'>Around the world, companies and individuals are committing to cut their CO2 emissions in half to maintain a chance of avoiding the worst effects of climate change. On their way, many are becoming carbon neutral – compensating for their emissions through climate projects.</p>
+          <p className='font-medium text-base mb-2'>We help you or your company compensate for the carbon footprint of your activities by supporting renewable energy, community, and nature-based projects to contribute for a low carbon future.</p>
+          <p className='font-medium text-base mb-2'>Whether you or your company is a small or large emitter of greenhouse gases, we have you covered!</p>
+          <p className='font-medium text-base mb-2'>If you know how many tons of carbon you’ve emitted, it’s simple, you just need to add the amounts into the calculator above and purchase the carbon credits.</p>
+          <p className='font-medium text-base mb-2'>Human activities not only add carbon emissions to the atmosphere and contribute to climate change, they also have multiple negative impacts on the environment, ecosystems, societies, and living beings.</p>
+          <p className='font-medium text-base mb-2'>Our carbon offset projects not only focus on removing or avoiding carbon emissions but contribute heavily towards the redevelopment of the ecosystems and societies and improve the quality of life of all living beings to combat negative impacts brought by human activities per ton of CO2 emission.</p>
+        </div>
+        <div className="w-1/5"></div>
       </div>
     </div>
     </div>
