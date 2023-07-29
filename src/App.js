@@ -30,6 +30,7 @@ function App() {
   const [firstName, setfirstName] = useState('');
   const [lastName, setlastName] = useState('');
   const [emailAddress, setemailAddress] = useState('');
+  const [companyName, setcompanyName] = useState('');
   const [resAddress, setresAddress] = useState('');
   const [success_message, setsuccess_message] = useState('');
 
@@ -73,7 +74,7 @@ function App() {
    };
    const json2 = {
     "consumer_email": localStorage.getItem("emailAddress"),
-    "on_behalf_of_name": localStorage.getItem("firstName") + " " + localStorage.getItem("lastName")
+    "on_behalf_of_name": firstName && lastName ? localStorage.getItem("firstName") + " " + localStorage.getItem("lastName") : localStorage.getItem("companyName")
   };
   
   const getProfiles = async () => {
@@ -124,6 +125,7 @@ function App() {
 const handleClick = () => {
   localStorage.setItem("firstName", firstName);
   localStorage.setItem("lastName", lastName);
+  localStorage.setItem("companyName", companyName);
   localStorage.setItem("emailAddress", emailAddress);
   localStorage.setItem("resAddress", resAddress);
   localStorage.setItem("quantity", quantity);
@@ -156,13 +158,14 @@ const totalAmountCalculate = (quantity) => {
         <div className='text-center pb-4'>Billing address</div>
         {emailSendSucess ? (
           <div className='w-full font-medium text-white text-center text-lg bg-[#28a745] p-1 rounded-xl'>
-            {emailSendSucess}
+            Your transaction has been approved!<br></br>
+            <p className='font-medium text-sm'>You will receive a payment receipt shortly and (if you opted for it) a verified emission reduction certificate.</p>
           </div>
         ) : ''}
         {proceedPaymentPage ? (
         <form onSubmit={handleClick}>
         <div className="block tracking-wide leading-relaxed font-extrabold text-3xl ml-4">Carbon Offset</div>
-        <div className="text-palette-primary font-medium py-4 px-1 text-2xl ml-4">$12 <span className='text-xl text-palette-primary font-medium'>/tons</span></div>
+        <div className="text-palette-primary font-medium py-4 px-1 text-2xl ml-4">$12 <span className='text-xl text-palette-primary font-medium'>/ton</span></div>
         <div className='w-full ml-4'>
           <div className='flex justify-start space-x-2 w-full'>
             <div className='flex flex-col items-start space-y-1 flex-grow-0'>
@@ -185,7 +188,7 @@ const totalAmountCalculate = (quantity) => {
               <label className="text-base mb-2">
                 First Name
               </label>
-              <input required className="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-first-name" 
+              <input className={companyName ? "pointer-events-none bg-gray-300 appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" : "appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} id="grid-first-name" 
               value={firstName}
               onChange={e => setfirstName(e.target.value)}
               type="text" />
@@ -194,9 +197,20 @@ const totalAmountCalculate = (quantity) => {
               <label className="text-base mb-2">
                 Last Name
               </label>
-              <input required className="appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" 
+              <input className={companyName ? "pointer-events-none bg-gray-300 appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" : "appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} id="grid-last-name" 
               value={lastName}
               onChange={e => setlastName(e.target.value)}
+              type="text" />
+            </div>
+          </div>
+          <div className="flex flex-wrap mb-1">
+            <div className="w-full px-3">
+              <label className="text-base mb-2">
+                Company
+              </label>
+              <input className={firstName && lastName ? "pointer-events-none bg-gray-300 appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" : "appearance-none block w-full text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"} id="grid-company" 
+              value={companyName}
+              onChange={e => setcompanyName(e.target.value)}
               type="text" />
             </div>
           </div>
@@ -231,7 +245,7 @@ const totalAmountCalculate = (quantity) => {
               <label
                   className="inline-block pl-[0.15rem] hover:cursor-pointer"
                   htmlFor="flexSwitchCheckDefault"
-              >Email carbon neutral certificate</label>
+              >Email emission reduction certificate</label>
               </div>
             </div>
             <div className="md:w-full px-3 py-3">
@@ -252,42 +266,21 @@ const totalAmountCalculate = (quantity) => {
           </div>
         </div>
         <div className="w-full md:w-1/3">
-              <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={false}
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
-            >
-                <SwiperSlide>
-                    <img
-                        className="object-fill w-full"
-                        src="https://thecarboncollectiveco.com/wp-content/uploads/2022/10/green-tea-plantations-in-india-2022-02-02-05-09-31-utc.jpg.webp"
-                        alt="image slide 1"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className="object-fill w-full"
-                        src="https://thecarboncollectiveco.com/wp-content/uploads/2022/10/sand-dunes-in-desert-2021-09-04-04-43-13-utc.jpg.webp"
-                        alt="image slide 2"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className="object-fill w-full"
-                        src="https://thecarboncollectiveco.com/wp-content/uploads/2022/10/beautiful-waterfall-in-the-valley-of-waterfalls-in-2021-08-26-23-05-40-utc-1-min.jpg.webp"
-                        alt="image slide 3"
-                    />
-                </SwiperSlide>
-            </Swiper>
+            <img
+                className="object-fill w-[210px] mb-[10px] mt-[5px]"
+                src="https://thecarboncollectiveco.com/wp-content/uploads/2023/07/screencapture-apidemoes-starcb-Az21Ky98Ew73-offsetting-your-flight-2023-07-29-13_07_50_3rd.jpg"
+                alt="image slide 1"
+            />
+            <img
+                className="object-fill w-[210px] mb-[10px]"
+                src="https://thecarboncollectiveco.com/wp-content/uploads/2023/07/screencapture-apidemoes-starcb-Az21Ky98Ew73-offsetting-your-flight-2023-07-29-13_07_50_2nd.jpg"
+                alt="image slide 2"
+            />
+            <img
+                className="object-fill w-[210px] mb-[10px]"
+                src="https://thecarboncollectiveco.com/wp-content/uploads/2023/07/screencapture-apidemoes-starcb-Az21Ky98Ew73-offsetting-your-flight-2023-07-29-13_07_50.jpg"
+                alt="image slide 3"
+            />
         </div>
         <div className="w-1/6"></div>
       </div>
