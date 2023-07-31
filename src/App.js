@@ -151,7 +151,7 @@ const totalAmountCalculate = (quantity) => {
     <div className="container mx-auto p-8">
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/4">
-        <div className="w-full max-w-sm px-2 pb-3 pt-2 bg-[#a8c62e] rounded overflow-hidden shadow-lg">
+        <div className="w-full max-w-sm px-3 pb-3 pt-2 bg-[#a8c62e] rounded overflow-hidden shadow-lg">
         <div className='text-center pb-4'>Billing address</div>
         {emailSendSucess ? (
           <div className='w-full font-medium text-white text-center text-lg bg-[#28a745] p-1 rounded-xl'>
