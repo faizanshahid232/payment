@@ -200,8 +200,8 @@ const totalAmountCalculate = (quantity) => {
               type="text" />
             </div>
           </div>
-          <div className="flex flex-wrap mb-1 w-full">
-            <div className="w-full px-3">
+          <div className="flex flex-wrap mb-1">
+            <div className="w-4/5 px-3">
               <label className="text-base mb-2">
                 Company
               </label>
