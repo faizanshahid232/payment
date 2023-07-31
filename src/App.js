@@ -149,11 +149,8 @@ const totalAmountCalculate = (quantity) => {
   return (
     <div className='bg-[#f2f2f2]'>
     <div className="container mx-auto p-8">
-      <div className="w-full text-center text-4xl py-4">Checkout</div>
       <div className="flex flex-col md:flex-row">
-      <div className="w-1/6"></div>
-        
-        <div className="w-full md:w-1/3">
+        <div className="w-full">
         <div className="w-full max-w-sm px-2 pb-3 pt-2 bg-[#a8c62e] rounded overflow-hidden shadow-lg">
         <div className='text-center pb-4'>Billing address</div>
         {emailSendSucess ? (
@@ -265,39 +262,7 @@ const totalAmountCalculate = (quantity) => {
           )}
           </div>
         </div>
-        <div className="w-full md:w-1/3">
-            <img
-                className="object-fill w-[210px] mb-[10px] mt-[5px]"
-                src="https://thecarboncollectiveco.com/wp-content/uploads/2023/07/screencapture-apidemoes-starcb-Az21Ky98Ew73-offsetting-your-flight-2023-07-29-13_07_50_3rd.jpg"
-                alt="image slide 1"
-            />
-            <img
-                className="object-fill w-[210px] mb-[10px]"
-                src="https://thecarboncollectiveco.com/wp-content/uploads/2023/07/screencapture-apidemoes-starcb-Az21Ky98Ew73-offsetting-your-flight-2023-07-29-13_07_50_2nd.jpg"
-                alt="image slide 2"
-            />
-            <img
-                className="object-fill w-[210px] mb-[10px]"
-                src="https://thecarboncollectiveco.com/wp-content/uploads/2023/07/screencapture-apidemoes-starcb-Az21Ky98Ew73-offsetting-your-flight-2023-07-29-13_07_50.jpg"
-                alt="image slide 3"
-            />
-        </div>
         <div className="w-1/6"></div>
-      </div>
-    </div>
-    <div className="container mx-auto p-8">
-      <div className='flex flex-col md:flex-row'>
-        <div className="w-1/5"></div>
-        <div className="w-4/5">
-          <h3 className='text-center font-extrabold text-3xl mb-4'>Why should I take control of my carbon footprint with The Carbon Collective Company?</h3>
-          <p className='font-medium text-base mb-2'>Around the world, companies and individuals are committing to cut their CO2 emissions in half to maintain a chance of avoiding the worst effects of climate change. On their way, many are becoming carbon neutral – compensating for their emissions through climate projects.</p>
-          <p className='font-medium text-base mb-2'>We help you or your company compensate for the carbon footprint of your activities by supporting renewable energy, community, and nature-based projects to contribute for a low carbon future.</p>
-          <p className='font-medium text-base mb-2'>Whether you or your company is a small or large emitter of greenhouse gases, we have you covered!</p>
-          <p className='font-medium text-base mb-2'>If you know how many tons of carbon you’ve emitted, it’s simple, you just need to add the amounts into the calculator above and purchase the carbon credits.</p>
-          <p className='font-medium text-base mb-2'>Human activities not only add carbon emissions to the atmosphere and contribute to climate change, they also have multiple negative impacts on the environment, ecosystems, societies, and living beings.</p>
-          <p className='font-medium text-base mb-2'>Our carbon offset projects not only focus on removing or avoiding carbon emissions but contribute heavily towards the redevelopment of the ecosystems and societies and improve the quality of life of all living beings to combat negative impacts brought by human activities per ton of CO2 emission.</p>
-        </div>
-        <div className="w-1/5"></div>
       </div>
     </div>
     </div>
