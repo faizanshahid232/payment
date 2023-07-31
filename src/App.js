@@ -247,14 +247,14 @@ const totalAmountCalculate = (quantity) => {
               >Email emission reduction certificate</label>
               </div>
             </div>
-            <div className="md:w-full px-3 py-3">
+            <div className="w-11/12 px-3 py-3">
             <button type='submit' className="mt-2 w-full shadow bg-[#1b1a1a] hover:bg-[#1b1a1a] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">
               Proceed For Payment
             </button>
             </div>
             </form>
           ) : (
-            <div className="md:w-full px-3 py-3">
+            <div className="w-11/12 px-3 py-3">
             {clientSecret && (
                   <Elements options={options} stripe={stripePromise} key={clientSecret}>
                     <CheckoutForm />
