@@ -180,8 +180,8 @@ const totalAmountCalculate = (quantity) => {
             </div>
           </div>
         </div>
-          <div className="flex flex-wrap mb-1 mt-5">
-            <div className="w-full md:w-1/2 px-3 mb-1 md:mb-0">
+          <div className="flex flex-wrap mb-1">
+            <div className="w-11/12 px-3">
               <label className="text-base mb-2">
                 First Name
               </label>
@@ -190,7 +190,9 @@ const totalAmountCalculate = (quantity) => {
               onChange={e => setfirstName(e.target.value)}
               type="text" />
             </div>
-            <div className="w-full md:w-1/2 px-3">
+            </div>
+            <div className="flex flex-wrap mb-1">
+            <div className="w-11/12 px-3">
               <label className="text-base mb-2">
                 Last Name
               </label>
@@ -201,7 +203,7 @@ const totalAmountCalculate = (quantity) => {
             </div>
           </div>
           <div className="flex flex-wrap mb-1">
-            <div className="w-4/5 px-3">
+            <div className="w-11/12 px-3">
               <label className="text-base mb-2">
                 Company
               </label>
@@ -212,7 +214,7 @@ const totalAmountCalculate = (quantity) => {
             </div>
           </div>
           <div className="flex flex-wrap mb-1">
-            <div className="w-full px-3">
+            <div className="w-11/12 px-3">
               <label className="text-base mb-2">
                 Email
               </label>
@@ -223,7 +225,7 @@ const totalAmountCalculate = (quantity) => {
             </div>
           </div>
           <div className="flex flex-wrap mb-1">
-            <div className="w-full px-3 mb-1 md:mb-0">
+            <div className="w-11/12 px-3 mb-1 md:mb-0">
                 <label className="text-base mb-2">
                   Address
                 </label>
