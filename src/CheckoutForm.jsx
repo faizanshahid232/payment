@@ -71,7 +71,7 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "https://thecarboncollectiveco.com/neutralnow/",
+        return_url: "https://payment-ten-sooty.vercel.app/",
       },
     });
     
