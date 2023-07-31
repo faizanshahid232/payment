@@ -94,10 +94,10 @@ export default function CheckoutForm() {
   }
 
   return (
-    <form id="payment-form" onSubmit={handleSubmit}>
+    <form id="payment-form" className="w-11/12" onSubmit={handleSubmit}>
       
       <PaymentElement id="payment-element" options={paymentElementOptions} />
-      <button className="mt-5 w-full shadow bg-[#1b1a1a] hover:bg-[#1b1a1a] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" disabled={isLoading || !stripe || !elements} id="submit">
+      <button className="mt-5 w-11/12 shadow bg-[#1b1a1a] hover:bg-[#1b1a1a] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" disabled={isLoading || !stripe || !elements} id="submit">
         <span id="button-text">
           {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
           
