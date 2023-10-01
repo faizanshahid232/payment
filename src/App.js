@@ -148,18 +148,17 @@ const totalAmountCalculate = (quantity) => {
 }
   return (
     <div className='bg-[#f2f2f2]'>
-    {emailSendSucess ? (
-    <div className='w-full font-medium text-white text-center text-lg bg-[#28a745] p-1 rounded-xl'>
-      Your transaction has been approved!<br></br>
-      <p className='font-medium text-sm'>You will receive a payment receipt shortly and (if you opted for it) a verified emission reduction certificate.</p>
-    </div>
-  ) : ''}
-    {!emailSendSucess && (
-      <div className="container mx-auto p-8">
+    <div className="container mx-auto p-8">
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/4">
         <div className="w-full max-w-sm px-3 pb-3 pt-2 bg-[#a8c62e] rounded overflow-hidden shadow-lg">
         <div className='text-center pb-4'>Billing address</div>
+        {emailSendSucess ? (
+          <div className='w-full font-medium text-white text-center text-lg bg-[#28a745] p-1 rounded-xl'>
+            Your transaction has been approved!<br></br>
+            <p className='font-medium text-sm'>You will receive a payment receipt shortly and (if you opted for it) a verified emission reduction certificate.</p>
+          </div>
+        ) : ''}
         {proceedPaymentPage ? (
         <form onSubmit={handleClick}>
         <div className="block tracking-wide leading-relaxed font-extrabold text-3xl ml-4">Carbon Offset</div>
@@ -268,7 +267,6 @@ const totalAmountCalculate = (quantity) => {
         <div className="w-1/6"></div>
       </div>
     </div>
-    )}
     </div>
   );
 }
