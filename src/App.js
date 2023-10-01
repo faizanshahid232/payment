@@ -153,8 +153,9 @@ const totalAmountCalculate = (quantity) => {
       Your transaction has been approved!<br></br>
       <p className='font-medium text-sm'>You will receive a payment receipt shortly and (if you opted for it) a verified emission reduction certificate.</p>
     </div>
-    ) : 
-    <div className="container mx-auto p-8">
+  ) : ''}
+    {!emailSendSucess && (
+      <div className="container mx-auto p-8">
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/4">
         <div className="w-full max-w-sm px-3 pb-3 pt-2 bg-[#a8c62e] rounded overflow-hidden shadow-lg">
@@ -267,7 +268,7 @@ const totalAmountCalculate = (quantity) => {
         <div className="w-1/6"></div>
       </div>
     </div>
-    }
+    )}
     </div>
   );
 }
